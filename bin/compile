@@ -39,6 +39,9 @@ File.open "#{ENV['HOME']}/.curlrc", "w+", 0600 do |f|
   f.puts "--netrc-optional"
 end
 
+# Set git to use https instead of ssh when resolving git URLs
+puts `git config --global url."https://".insteadOf git://`
+
 if valid_login? github_token
   puts "       Generated .netrc & .curlrc files (available only at build-time)"
 
