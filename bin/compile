@@ -56,3 +56,7 @@ else
   puts "       !!!! No valid Github user found with GITHUB_AUTH_TOKEN: '#{github_token}'"
   exit 1
 end
+
+##
+# Set github config to always use https
+`git config --global url."https://".insteadOf git://`
